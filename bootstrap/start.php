@@ -18,17 +18,18 @@ $app = new Illuminate\Foundation\Application;
 | Detect The Application Environment
 |--------------------------------------------------------------------------
 |
-| Laravel takes a dead simple approach to your application environments
-| so you can just specify a machine name for the host that matches a
-| given environment, then we will automatically detect it for you.
+| Assume "local" environment if the application is served via the "php
+| artisan serve" command, otherwise app environment will be "production".
 |
 */
 
-$env = $app->detectEnvironment(array(
+$env = $app->detectEnvironment(function() {
 
-	'local' => array('homestead'),
+    return isset($_SERVER['SERVER_SOFTWARE']) &&
+        str_contains($_SERVER['SERVER_SOFTWARE'], 'Development Server') ?
+            'local' : 'production';
 
-));
+});
 
 /*
 |--------------------------------------------------------------------------
