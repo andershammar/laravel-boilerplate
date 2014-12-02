@@ -1,3 +1,19 @@
+## Laravel Boilerplate Project
+
+A Laravel boilerplate project that includes the following community libraries:
+
+* Bootstrap
+* Laravel Debugbar
+* Laravel IDE Helper Generator
+* Faker
+
+The way that Laravel detect the application environment has also been changed. See the following
+commit for more information:
+
+* 1c937a2 Changed how the application enviromnet is detected
+
+- - -
+
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
